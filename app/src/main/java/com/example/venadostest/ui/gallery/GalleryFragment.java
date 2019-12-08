@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.venadostest.MainActivity;
 import com.example.venadostest.R;
 import com.example.venadostest.adapters.PartidosAdapter;
 import com.example.venadostest.vo.PartidoResumen;
@@ -47,5 +48,11 @@ public class GalleryFragment extends Fragment {
         }
 
         return root;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        MainActivity.tabLayout.setVisibility(View.VISIBLE);
     }
 }

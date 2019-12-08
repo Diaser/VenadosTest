@@ -15,4 +15,12 @@
     <string name="menu_send">Send</string>
     <string name="copa_mx">COPA MX</string>
     <string name="asenso_mx">ASENSO MX</string>
+
+    <string name="ficha_tecnica">FICHA TÉCNICA</string>
+    <string name="fecha_nac">FECHA DE NACIMIENTO</string>
+    <string name="lugar_nac">LUGAR DE NACIMIENTO</string>
+    <string name="peso">PESO</string>
+    <string name="altura">ALTURA</string>
+    <string name="equipo_anterior">EQUIPO ANTERIOR</string>
+
 </resources>

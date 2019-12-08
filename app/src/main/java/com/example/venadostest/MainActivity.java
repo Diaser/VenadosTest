@@ -1,7 +1,6 @@
 package com.example.venadostest;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -30,6 +29,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.widget.Toast;
@@ -37,12 +37,14 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,21 +52,27 @@ public class MainActivity extends AppCompatActivity {
     private HomeViewModel homeViewModel;
     PartidosAdapter partidosAdapter = null;
     HomeFragment homeFragment = null;
-    List<PartidoResumen> listaAsenso  = null;
-    List<PartidoResumen> listaMX = null;
+    public static List<PartidoResumen> listaAsenso  = null;
+    public static List<PartidoResumen> listaMX = null;
     private final String partidos = "https://venados.dacodes.mx/api/games";
+    public static Activity activity;
+    public static TabLayout tabLayout;
+    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.fab) FloatingActionButton fab;
+    @BindView(R.id.drawer_layout) DrawerLayout drawer;
+    @BindView(R.id.nav_view) NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
+        tabLayout = findViewById(R.id.tab_lay);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        TabLayout tabLayout = (TabLayout)findViewById(R.id.tab_lay);
-
+        activity = MainActivity.this;
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -123,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,10 +139,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
 
         //En nav_home estan las imagenes del menu de navegación
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -251,4 +256,5 @@ public class MainActivity extends AppCompatActivity {
             Log.i("MyLog","onPostExcecute");
         }
     }
+
 }

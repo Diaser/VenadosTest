@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.venadostest.MainActivity;
 import com.example.venadostest.R;
 import com.example.venadostest.conn.AppConnection;
 
@@ -38,6 +39,7 @@ public class SendFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         new AsynckGetTable().execute();
+        MainActivity.tabLayout.setVisibility(View.GONE);
     }
 
     private class AsynckGetTable extends AsyncTask<String, Void, Void> {
