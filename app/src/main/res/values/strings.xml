@@ -23,4 +23,6 @@
     <string name="altura">ALTURA</string>
     <string name="equipo_anterior">EQUIPO ANTERIOR</string>
 
+    <string name="vacio">Listado vacio</string>
+
 </resources>

@@ -20,15 +20,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <GridView
-        android:id="@+id/grid"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnWidth="120dp"
-        android:horizontalSpacing="5dp"
-        android:numColumns="3"
-        android:padding="5dp"
-        android:verticalSpacing="5dp"
-        android:gravity="center"/>
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxHeight="0dp"
+            android:src="@mipmap/back_pasto1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="@string/vacio"/>
+
+        <GridView
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnWidth="120dp"
+            android:horizontalSpacing="5dp"
+            android:numColumns="3"
+            android:padding="5dp"
+            android:verticalSpacing="5dp"
+            android:gravity="center"/>
+
+    </FrameLayout>
+
+
+
 </LinearLayout>

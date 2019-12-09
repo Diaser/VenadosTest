@@ -7,12 +7,36 @@
     android:orientation="vertical"
     android:background="@android:color/white">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="4dp"
-        android:background="@android:color/darker_gray"/>
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxHeight="0dp"
+            android:src="@mipmap/back_pasto1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="@string/vacio"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:background="@android:color/white"/>
+
+    </FrameLayout>
+
+
 
 
 </LinearLayout>

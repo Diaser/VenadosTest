@@ -56,11 +56,12 @@ public class SendFragment extends Fragment {
             jsonObject = AppConnection.conectWebService(url);
 
             try {
-                if (jsonObject.has("data")) {
+                if (jsonObject.has("data"))
                     jsonObject = jsonObject.getJSONObject("data");
-                    if (jsonObject.has("games")) {
+                if (jsonObject.has("statistics"))
+                    jsonObject = jsonObject.getJSONObject("statistics");
+                if(jsonObject.has("forwards")){
 
-                    }
                 }
 
             } catch (Exception e) {
